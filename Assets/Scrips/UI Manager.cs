@@ -20,7 +20,7 @@ public class UIManager : MonoBehaviour
     public void SelectLevel()
     {
         Time.timeScale = 1f;
-        SceneManager.LoadScene("LevelSelect"); // ตั้งชื่อ scene เอง
+        SceneManager.LoadScene("Level Select"); // ตั้งชื่อ scene เอง
     }
 
     public void MainMenu()
@@ -39,5 +39,12 @@ public class UIManager : MonoBehaviour
     {
         Time.timeScale = 1f;
         SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
+    }
+    public void ResetProgress()
+    {
+        PlayerPrefs.DeleteAll();
+        PlayerPrefs.Save();
+
+        Debug.Log("Reset Save แล้ว!");
     }
 }

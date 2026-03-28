@@ -132,10 +132,17 @@ public class PlayerController : MonoBehaviour
         {
             Debug.Log("YOU WIN 🎉");
 
+            int currentLevel = UnityEngine.SceneManagement.SceneManager.GetActiveScene().buildIndex;
+            int unlockedLevel = PlayerPrefs.GetInt("UnlockedLevel", 1);
+
+            if (currentLevel >= unlockedLevel)
+            {
+                PlayerPrefs.SetInt("UnlockedLevel", currentLevel + 1);
+            }
+
             rb.linearVelocity = Vector3.zero;
             enabled = false;
 
-            // 🔥 เรียก UI แบบตรงๆ
             uiManager.ShowWinUI();
         }
     }
