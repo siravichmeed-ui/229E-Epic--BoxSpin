@@ -1,4 +1,5 @@
 using System.Collections;
+using System.Net;
 using UnityEngine;
 
 [RequireComponent(typeof(Rigidbody))]
@@ -12,15 +13,19 @@ public class PlayerController : MonoBehaviour
 
     public UIManager uiManager;
     private Rigidbody rb;
+    public LineRenderer lineRenderer;
 
     void Start()
     {
         rb = GetComponent<Rigidbody>();
         rb.interpolation = RigidbodyInterpolation.Interpolate;
+        rb.constraints = RigidbodyConstraints.FreezeRotationX
+                | RigidbodyConstraints.FreezeRotationZ;
     }
 
     void Update()
     {
+
         // 🔷 กลิ้ง
         if (!isMoving)
         {
@@ -52,7 +57,7 @@ public class PlayerController : MonoBehaviour
             Debug.DrawRay(transform.position, transform.forward * 5f, Color.red);
         }
 
-        
+
     }
 
     void Move(Vector3 dir)
@@ -97,21 +102,23 @@ public class PlayerController : MonoBehaviour
     {
         Ray ray = new Ray(transform.position, transform.forward);
         RaycastHit hit;
-
-        if (Physics.Raycast(ray, out hit, 5f))
+        Vector3 endPoint;
+        if (Physics.Raycast(ray, out hit, 10f))
         {
-            Debug.Log("ยิงโดน: " + hit.collider.name);
+            endPoint = hit.point;
 
-            // 🎯 ตัวอย่าง: ยิงแล้วทำให้วัตถุเด้ง
-            Rigidbody targetRb = hit.collider.GetComponent<Rigidbody>();
-            if (targetRb != null)
+            RaySwitch sw = hit.collider.GetComponent<RaySwitch>();
+            if (sw != null)
             {
-                targetRb.AddForce(Vector3.up * 5f, ForceMode.Impulse);
+                sw.Activate();
             }
-
-            // 💥 ตัวอย่าง: ยิงแล้วลบวัตถุ
-            // Destroy(hit.collider.gameObject);
         }
+        else
+        {
+            endPoint = transform.position + transform.forward * 10f;
+        }
+        lineRenderer.SetPosition(0, transform.position);
+        lineRenderer.SetPosition(1, endPoint);
     }
 
     void OnCollisionStay(Collision collision)
@@ -147,4 +154,5 @@ public class PlayerController : MonoBehaviour
         }
     }
 
+    
 }

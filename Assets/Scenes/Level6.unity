@@ -1996,7 +1996,6 @@ MonoBehaviour:
   moveDuration: 0.1
   jumpForce: 5
   uiManager: {fileID: 1419973561}
-  lineRenderer: {fileID: 0}
 --- !u!65 &348353430
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -2043,7 +2042,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: 26bd9deb7e8928d45a032021b1a913bd, type: 2}
+  - {fileID: 2100000, guid: 31321ba15b8f8eb4c954353edc038b1d, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
