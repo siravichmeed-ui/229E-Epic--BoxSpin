@@ -20,4 +20,8 @@ public class MainMenuUI : MonoBehaviour
 
         Debug.Log("Reset Save แล้ว!");
     }
+    public void E()
+    {
+        SceneManager.LoadScene("Credit"); // ชื่อด่านแรก
+    }
 }

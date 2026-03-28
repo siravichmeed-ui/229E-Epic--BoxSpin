@@ -31,4 +31,8 @@ public class LevelSelectUI : MonoBehaviour
     {
         SceneManager.LoadScene("Level" + levelIndex);
     }
+    public void LoadScene(string Credit)
+    {
+        SceneManager.LoadScene("Credit");
+    }
 }
