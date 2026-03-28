@@ -5,6 +5,7 @@ public class UIManager : MonoBehaviour
 {
     public GameObject winPanel;
     public GameObject gameOverPanel;
+
     public void ShowWinUI()
     {
         winPanel.SetActive(true);
@@ -14,7 +15,15 @@ public class UIManager : MonoBehaviour
     public void NextLevel()
     {
         Time.timeScale = 1f;
-        SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 1);
+
+        if (SceneManager.GetActiveScene().name == "Level5")
+        {
+            SceneManager.LoadScene("Credit");
+        }
+        else
+        {
+            SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 1);
+        }
     }
 
     public void SelectLevel()

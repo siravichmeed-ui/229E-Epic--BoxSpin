@@ -1996,6 +1996,7 @@ MonoBehaviour:
   moveDuration: 0.1
   jumpForce: 5
   uiManager: {fileID: 1419973561}
+  lineRenderer: {fileID: 0}
 --- !u!65 &348353430
 BoxCollider:
   m_ObjectHideFlags: 0
