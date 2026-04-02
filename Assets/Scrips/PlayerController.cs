@@ -26,7 +26,7 @@ public class PlayerController : MonoBehaviour
     void Update()
     {
 
-        // 🔷 กลิ้ง
+        // กลิ้ง
         if (!isMoving)
         {
             if (Input.GetKeyDown(KeyCode.W)) Move(Vector3.forward);
@@ -35,13 +35,13 @@ public class PlayerController : MonoBehaviour
             if (Input.GetKeyDown(KeyCode.D)) Move(Vector3.right);
         }
 
-        // 🔼 กระโดด
+        // กระโดด
         if (Input.GetKeyDown(KeyCode.Space) && isGrounded)
         {
             Jump();
         }
 
-        // 💀 ตก = แพ้
+        // ตก = แพ้
         if (transform.position.y < -5f)
         {
             rb.linearVelocity = Vector3.zero;
@@ -50,7 +50,7 @@ public class PlayerController : MonoBehaviour
             uiManager.ShowGameOverUI();
         }
 
-        // 🔥 ยิง Ray ตอนกด E
+        // ยิง Ray ตอนกด E
         if (Input.GetKeyDown(KeyCode.E))
         {
             ShootRay();
@@ -97,7 +97,7 @@ public class PlayerController : MonoBehaviour
         rb.AddForce(Vector3.up * jumpForce, ForceMode.Impulse);
     }
 
-    // 🔥 ฟังก์ชันยิง Ray
+    // ฟังก์ชันยิง Ray
     void ShootRay()
     {
         Ray ray = new Ray(transform.position, transform.forward);

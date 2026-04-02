@@ -43,7 +43,7 @@ public class UIManager : MonoBehaviour
         Time.timeScale = 0f;
     }
 
-    // 🔄 เล่นใหม่ (ด่านเดิม)
+    // เล่นใหม่ (ด่านเดิม)
     public void RestartLevel()
     {
         Time.timeScale = 1f;

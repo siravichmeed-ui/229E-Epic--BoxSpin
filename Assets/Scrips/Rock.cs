@@ -6,7 +6,7 @@ public class Rock : MonoBehaviour
 
     void Start()
     {
-        // 🧹 ลบตัวเองหลัง 2 วิ
+        //ลบตัวเองหลัง 2 วิ
         Destroy(gameObject, 5f);
     }
 
@@ -18,7 +18,7 @@ public class Rock : MonoBehaviour
 
             if (playerRb != null)
             {
-                // 💥 เด้งขึ้นเล็กน้อย
+                //เด้งขึ้นเล็กน้อย
                 playerRb.AddForce(Vector3.up * bounceForce, ForceMode.Impulse);
             }
         }

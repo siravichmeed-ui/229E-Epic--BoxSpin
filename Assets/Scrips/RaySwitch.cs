@@ -11,7 +11,7 @@ public class RaySwitch : MonoBehaviour
             isActivated = true;
             Debug.Log(name + " Activated!");
 
-            // 🎨 เปลี่ยนสีให้รู้ว่าเปิดแล้ว
+            // เปลี่ยนสีให้รู้ว่าเปิดแล้ว
             GetComponent<Renderer>().material.color = Color.green;
         }
     }
