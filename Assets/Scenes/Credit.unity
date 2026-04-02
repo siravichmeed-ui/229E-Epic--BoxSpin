@@ -852,7 +852,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: Milin Buasai No.38 1670707304
+  m_text: Milin Buasai No.38 1670707403
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 014eadf9768a67f4a9eb84efca4a26f9, type: 2}
   m_sharedMaterial: {fileID: 7747644657588380302, guid: 014eadf9768a67f4a9eb84efca4a26f9, type: 2}
@@ -989,7 +989,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: Siravich Meedsen No.38 1670703592
+  m_text: Siravich Meedsen No.20 1670703592
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 014eadf9768a67f4a9eb84efca4a26f9, type: 2}
   m_sharedMaterial: {fileID: 7747644657588380302, guid: 014eadf9768a67f4a9eb84efca4a26f9, type: 2}
